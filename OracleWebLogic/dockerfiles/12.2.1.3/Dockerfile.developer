@@ -27,7 +27,7 @@
 # Pull base image
 # From the Oracle Registry
 # -------------------------
-FROM oracle/serverjre:8
+FROM de.icr.io/fstar-eip/oracle-serverjre:8u211-oraclelinux-7.6
 
 # Maintainer
 # ----------
@@ -59,7 +59,7 @@ ENV DOMAIN_NAME="${DOMAIN_NAME:-base_domain}" \
     DEBUG_FLAG=true \
     PRODUCTION_MODE=dev \
     ADMINISTRATION_PORT_ENABLED="${ADMINISTRATION_PORT_ENABLED:-true}" \
-    ADMINISTRATION_PORT="${ADMINISTRATION_PORT:-9002}" 
+    ADMINISTRATION_PORT="${ADMINISTRATION_PORT:-9002}"
 
 
 

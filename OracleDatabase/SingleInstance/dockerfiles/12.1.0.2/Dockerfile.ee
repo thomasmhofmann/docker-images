@@ -5,7 +5,7 @@
 # ORACLE DOCKERFILES PROJECT
 # --------------------------
 # This is the Dockerfile for Oracle Database 12c Release 1 Enterprise Edition
-# 
+#
 # REQUIRED FILES TO BUILD THIS IMAGE
 # ----------------------------------
 # (1) linuxamd64_12102_database_1of2.zip
@@ -16,12 +16,12 @@
 # HOW TO BUILD THIS IMAGE
 # -----------------------
 # Put all downloaded files in the same directory as this Dockerfile
-# Run: 
-#      $ docker build -t oracle/database:12.1.0.2-ee . 
+# Run:
+#      $ docker build -t oracle/database:12.1.0.2-ee .
 #
 # Pull base image
 # ---------------
-FROM oraclelinux:7-slim as base
+FROM oraclelinux:7.6 as base
 
 # Maintainer
 # ----------
@@ -112,5 +112,5 @@ EXPOSE 1521 5500
 HEALTHCHECK --interval=1m --start-period=5m \
    CMD "$ORACLE_BASE/$CHECK_DB_FILE" >/dev/null || exit 1
 
-# Define default command to start Oracle Database. 
+# Define default command to start Oracle Database.
 CMD exec $ORACLE_BASE/$RUN_FILE
